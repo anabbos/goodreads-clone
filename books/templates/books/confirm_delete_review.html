@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Подтверждение удаление коммента{% endblock %}
+
+{% block content %}
+    <h3>Вы действительно хотите удалить комментарию?</h3>
+
+    <p>
+        <b>Книга:</b> {{ book.title }}
+    </p>
+    <p>
+        <b>Коммент:</b> {{ review.comment }}
+    </p>
+    <a href="{% url 'books:delete-review' book.id review.id %}" class="btn btn-outline-danger">Yes</a> <a href="{% url 'books:detail' book.id %}" class="btn btn-outline-primary">No</a>
+{% endblock %}
